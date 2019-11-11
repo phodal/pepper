@@ -8,8 +8,8 @@ import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
-public class MyCalenderClassTest {
-    private MyCalenderClass myClassTest;
+public class MyDateClassTest {
+    private MyDateClass myClassTest;
 
     @Before
     public void setUp() {
@@ -19,7 +19,7 @@ public class MyCalenderClassTest {
         final DateTime dt = Mockito.mock(DateTime.class);
         Mockito.when(dt.getDate()).thenReturn(date);
 
-        myClassTest = new MyCalenderClass(dt);
+        myClassTest = new MyDateClass(dt);
     }
 
     @Test

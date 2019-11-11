@@ -1,9 +1,9 @@
 package com.phodal.pepper.normal.date.mockito;
 
-public class MyCalenderClass {
+public class MyDateClass {
     private final DateTime dateTime;
 
-    public MyCalenderClass(final DateTime dateTime) {
+    public MyDateClass(final DateTime dateTime) {
         this.dateTime = dateTime;
     }
 
