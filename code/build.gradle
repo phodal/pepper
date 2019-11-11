@@ -58,16 +58,20 @@ dependencies {
 //	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-verifier'
 //	testImplementation 'org.springframework.kafka:spring-kafka-test'
 //	testImplementation 'org.springframework.security:spring-security-test'
-
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher") {
 		because 'allows tests to run from IDEs that bundle older version of launcher'
 	}
 
 	testImplementation('junit:junit:4.12')
-	testImplementation 'org.mockito:mockito-core:2.24.5'
-	testImplementation 'org.mockito:mockito-inline:2.24.5'
+	// 确保配对
+	testImplementation 'org.mockito:mockito-core:2.25.1'
+	testImplementation 'org.mockito:mockito-inline:2.25.1'
 	testImplementation 'org.powermock:powermock-module-junit4:2.0.4'
 	testImplementation 'org.powermock:powermock-api-mockito2:2.0.4'
+
+//	compile group: 'net.bytebuddy', name: 'byte-buddy', version: '1.10.2'
+//	compile group: 'net.bytebuddy', name: 'byte-buddy-agent', version: '1.10.2'
+//	testCompile group: 'org.objenesis', name: 'objenesis', version: '3.1'
 }
 
 dependencyManagement {
