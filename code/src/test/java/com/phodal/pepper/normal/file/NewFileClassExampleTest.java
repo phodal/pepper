@@ -11,17 +11,16 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import java.io.File;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(ATestFileClass.class)
-public class ATestFileClassTest {
+@PrepareForTest(NewFileExample.class)
+public class NewFileClassExampleTest {
     @Test
-    public void testFile() throws Exception
-    {
+    public void testFile() throws Exception {
         File mockedFile = Mockito.mock(File.class);
         Mockito.when(mockedFile.exists()).thenReturn(true);
 
         PowerMockito.whenNew(File.class).withParameterTypes(String.class).withArguments(Matchers.anyString()).thenReturn(mockedFile);
 
-        ATestFileClass classToTest = new ATestFileClass();
+        NewFileExample classToTest = new NewFileExample();
         classToTest.openFile("testfile.txt");
 
         PowerMockito.verifyNew(File.class).withArguments("testfile.txt");

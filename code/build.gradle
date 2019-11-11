@@ -69,6 +69,7 @@ dependencies {
 	testImplementation 'org.mockito:mockito-inline:2.25.1'
 	testImplementation 'org.powermock:powermock-module-junit4:2.0.4'
 	testImplementation 'org.powermock:powermock-api-mockito2:2.0.4'
+	testCompile("org.assertj:assertj-core:3.11.1")
 
 //	compile group: 'net.bytebuddy', name: 'byte-buddy', version: '1.10.2'
 //	compile group: 'net.bytebuddy', name: 'byte-buddy-agent', version: '1.10.2'

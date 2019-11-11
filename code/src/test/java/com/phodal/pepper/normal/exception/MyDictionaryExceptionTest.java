@@ -2,15 +2,14 @@ package com.phodal.pepper.normal.exception;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.powermock.api.mockito.PowerMockito.when;
 
-public class MyDictionaryTest {
+public class MyDictionaryExceptionTest {
     @Test(expected = NullPointerException.class)
-    public void whenConfigNonVoidRetunMethodToThrowEx_thenExIsThrown() {
+    public void whenConfigNonVoidReturnMethodToThrowEx_thenExIsThrown() {
         MyDictionary dictMock = mock(MyDictionary.class);
         when(dictMock.getMeaning(anyString()))
                 .thenThrow(NullPointerException.class);
@@ -19,7 +18,7 @@ public class MyDictionaryTest {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void whenConfigVoidRetunMethodToThrowEx_thenExIsThrown() {
+    public void whenConfigVoidReturnMethodToThrowEx_thenExIsThrown() {
         MyDictionary dictMock = mock(MyDictionary.class);
         doThrow(IllegalStateException.class)
                 .when(dictMock)
