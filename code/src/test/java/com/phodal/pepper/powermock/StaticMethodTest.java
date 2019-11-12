@@ -22,7 +22,7 @@ public class StaticMethodTest {
 
         new ClassCallStaticMethodObj().execute();
 
-        PowerMockito.verifyStatic(StaticMethod.class, Mockito.times(2));
+        PowerMockito.verifyStatic(StaticMethod.class, Mockito.times(1));
         StaticMethod.firstStaticMethod(anyString());
         StaticMethod.secondStaticMethod();
     }
