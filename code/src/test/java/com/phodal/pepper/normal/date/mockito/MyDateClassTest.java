@@ -1,9 +1,7 @@
 package com.phodal.pepper.normal.date.mockito;
 
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.Date;
