@@ -25,7 +25,7 @@ func main() {
 
 	if len(argsWithoutProg) > 1 && argsWithoutProg[0] == "help" {
 		fmt.Println(argsWithoutProg[1])
-		bytes, _ := Asset(argsWithoutProg[1])
+		bytes, _ := Asset(codeMap[argsWithoutProg[1]])
 
 		err := quick.Highlight(os.Stdout, string(bytes), "go", "terminal16m", "monokai")
 		if err != nil {
