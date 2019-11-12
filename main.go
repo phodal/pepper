@@ -17,7 +17,7 @@ func main() {
 	}
 
 	if len(argsWithoutProg) > 0 && argsWithoutProg[0] == "list" {
-		for _, key := range codeMap {
+		for key := range codeMap {
 			fmt.Println(key)
 		}
 		return
