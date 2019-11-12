@@ -8,16 +8,28 @@ import (
 )
 
 func main() {
+	argsWithoutProg := os.Args[1:]
+
 	codeMap := map[string]string{
-		"Date": "code/src/test/java/com/phodal/pepper/normal/date/mockito/MyDateClassTest.java",
+		"Date":      "code/src/test/java/com/phodal/pepper/normal/date/mockito/MyDateClassTest.java",
 		"Exception": "code/src/test/java/com/phodal/pepper/normal/exception/MyDictionaryExceptionTest.java",
-		"NewFile": "code/src/test/java/com/phodal/pepper/normal/file/NewFileClassExampleTest.java",
+		"NewFile":   "code/src/test/java/com/phodal/pepper/normal/file/NewFileClassExampleTest.java",
 	}
 
-	bytes, _ := Asset(codeMap["Date"])
+	if len(argsWithoutProg) > 0 && argsWithoutProg[0] == "list" {
+		for _, key := range codeMap {
+			fmt.Println(key)
+		}
+		return
+	}
 
-	err := quick.Highlight(os.Stdout, string(bytes), "go", "terminal16m", "monokai")
-	if err != nil {
-		fmt.Println(err)
+	if len(argsWithoutProg) > 1 && argsWithoutProg[0] == "help" {
+		fmt.Println(argsWithoutProg[1])
+		bytes, _ := Asset(argsWithoutProg[1])
+
+		err := quick.Highlight(os.Stdout, string(bytes), "go", "terminal16m", "monokai")
+		if err != nil {
+			fmt.Println(err)
+		}
 	}
 }
