@@ -41,6 +41,8 @@ ext {
 }
 
 dependencies {
+	implementation group: 'org.reflections', name: 'reflections', version: '0.9.10'
+
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.flywaydb:flyway-core'
@@ -69,6 +71,7 @@ dependencies {
 	testImplementation 'org.mockito:mockito-inline:2.8.9'
 	testImplementation 'org.powermock:powermock-module-junit4:1.7.4'
 	testImplementation 'org.powermock:powermock-api-mockito2:1.7.4'
+
 	testCompile("org.assertj:assertj-core:3.11.1")
 }
 
