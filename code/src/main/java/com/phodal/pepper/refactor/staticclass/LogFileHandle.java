@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LogFileHandle {
-    public static void gotoRoute(String routerName) {
+    public static void verifyFilesBySuffix(String suffix) {
         HashMap<String, String> files = getFilesMap();
         for (Map.Entry<String, String> entry : files.entrySet()) {
-            FileHandler.verify(entry.getValue());
+            if (entry.getValue().endsWith(suffix)) {
+                FileHandler.verify(entry.getValue());
+            }
         }
     }
 
