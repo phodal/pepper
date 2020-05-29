@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 @Ignore
 public class MyDateClassTest {
     @Test
-    public void someTest() {
+    public void testDate() {
         final Date date = Mockito.mock(Date.class);
         Mockito.when(date.getTime()).thenReturn(30L);
 
@@ -26,5 +26,4 @@ public class MyDateClassTest {
         Mockito.verify(date, Mockito.times(1)).getTime();
         Mockito.verify(dt, Mockito.times(1)).getDate();
     }
-
 }

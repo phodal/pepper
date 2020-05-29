@@ -31,7 +31,6 @@ public class SystemClassUserTest {
         when(URLEncoder.encode("string", "utf8")).thenReturn("something");
 
         assertEquals("something", new SystemClassUser().performEncode());
-
     }
 
     @Test
