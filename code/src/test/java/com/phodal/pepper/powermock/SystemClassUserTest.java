@@ -36,7 +36,6 @@ public class SystemClassUserTest {
     @Test
     public void assertThatMockingOfTheRuntimeSystemClassWorks() throws Exception {
         mockStatic(Runtime.class);
-
         Runtime runtimeMock = mock(Runtime.class);
         Process processMock = mock(Process.class);
 
@@ -68,10 +67,9 @@ public class SystemClassUserTest {
     }
 
     @Test
-    public void assertThatMockingOfCollectionsWork() throws Exception {
-        List<?> list = new LinkedList<Object>();
+    public void assertThatMockingOfCollectionsWork() {
+        List<?> list = new LinkedList<>();
         mockStatic(Collections.class);
-
         Collections.shuffle(list);
 
         new SystemClassUser().shuffleCollection(list);
@@ -132,7 +130,7 @@ public class SystemClassUserTest {
     }
 
     @Test
-    public void mockingUUIDWorks() throws Exception {
+    public void mockingUUIDWorks() {
         // given
         final UUID mock = mock(UUID.class);
         mockStatic(UUID.class);
