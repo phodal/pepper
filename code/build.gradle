@@ -57,13 +57,16 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-//	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'
+//	testImplementation 'org.springframework.cloud:spring-clobyte-buddyud-starter-contract-stub-runner'
 //	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-verifier'
 //	testImplementation 'org.springframework.kafka:spring-kafka-test'
 //	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher") {
 		because 'allows tests to run from IDEs that bundle older version of launcher'
 	}
+
+	implementation 'org.slf4j:slf4j-simple:1.7.5'
+	implementation 'org.slf4j:slf4j-api:1.7.5'
 
 	testImplementation('junit:junit:4.12')
 	// 确保配对
